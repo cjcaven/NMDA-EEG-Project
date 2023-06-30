@@ -1,3 +1,3 @@
 # NMDA-EEG-Project
 Summer semester project for the course, Neurocognitive Methods and Data Analysis.  
-Group organization can be found on Notion at the following link: [https://www.notion.so/dbe537c4adaa4cdda115994744499d61?v=26442b80b44740b483a0d1b3bd1b9cac](Task Management)
+Group organization can be found on Notion at the following link: [Task Management](https://www.notion.so/invite/8f8b13efde52269851b1f1c695d6d4aae8a45b33)
