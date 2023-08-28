@@ -4,9 +4,8 @@
 % Load data
 filename = './bids/sub-/eeg/sub-_task-oddballauditoryparadigm_eeg.bdf'; 
 rchannels = load(removedchannels.mat);
-%trialdef = load('trialdef.mat');
+trialdef = load('trialdef.mat');
 
-% Define standard & rare trials
 % Define standard & rare trials
 cfg = [];
 cfg.dataset = filename;
@@ -31,7 +30,6 @@ cfg.hpfilter = 'yes';
 cfg.hpfreq = 0.1; 
 cfg.hpfilttype = 'firws';
 
-
 % Downsampling
 cfg = []; 
 cfg.resamples = 200; 
@@ -42,9 +40,9 @@ cfg.lpfilter = 'yes';
 cfg.lpfreq = 30; 
 cfg.lpfilttype = 'firws';
 
-
 % Epoching
 cfg = [];
+cfg.trl = trialdef;
 data_all = ft_redefinetrial(cfg.trl_all, data_all);
 
 % Artefact handling 
@@ -69,18 +67,15 @@ cfg.artfctdef.zvalue.interactive = 'no'; % no feedback
 cfg.artfctdef.eog.artifact = artifact_EOG;
 cfg = ft_rejectartifacts(cfg);
 
-
 % Averaging
 cfg = [];
 cfg.robust = 'yes'; 
-
 data_clean = ft_preprocessing(cfg);
 
 % Compute ERPs
 cfg = []; 
 cfg.trials = find(data_clean.trials == 65152);
 standard = ft_timelockanalysis(cfg,data_clean);
-
 cfg = []; 
 cfg.trials = find(data_clean.trials == 65216);
 rare = ft_timelockanalysis(cfg,data_clean);
