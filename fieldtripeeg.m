@@ -15,7 +15,7 @@ cfg.trialdef.eventvalue = [65152 65216];
 cfg.trialdef.prestim        = 0.04; % in sec
 cfg.trialdef.poststim       = 0.15; % in sec
 cfg.trl_all = ft_definetrial(cfg); 
-
+cfg.channel = setdiff('all', rchannels);
 data_all = ft_preprocessing(cfg);
 
 % Custom montage
