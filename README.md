@@ -5,4 +5,4 @@ Group organization can be found on Notion at the following link: [Task Managemen
 Project Breakdown
 1. Preprocessing of the EEG data involves constructing and executing a batch pipeline that can be applied to another dataset with minor adjustments. Preprocessing steps consist of conversion, montage, preparing, filtering, downsampling, epoching, artifact removal, and averaging.
 2. Transition of the data to BIDS format.
-3. Implementing a Fieldtrip pipeline for the SPM12 Mismatch Negativity Example dataset in a manner that ensures compatibility with the BIDS-formatted data.
+3. Implementing a Fieldtrip pipeline for the SPM12 Mismatch Negativity example dataset in a manner that ensures compatibility with the BIDS-formatted data.
