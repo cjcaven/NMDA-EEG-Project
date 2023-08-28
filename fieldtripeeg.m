@@ -16,6 +16,7 @@ cfg.trialdef.prestim        = 0.04; % in sec
 cfg.trialdef.poststim       = 0.15; % in sec
 cfg.trl_all = ft_definetrial(cfg); 
 
+data_all = ft_preprocessing(cfg);
 
 % Custom montage
 %cfg.montage.labelold = {'EXG1' 'EXG2' 'EXG3'};
@@ -39,6 +40,11 @@ cfg = [];
 cfg.lpfilter = 'yes';
 cfg.lpfreq = 30; 
 cfg.lpfilttype = 'firws';
+
+
+% Epoching
+cfg = [];
+data_all = ft_redefinetrial(cfg.trl_all, data_all);
 
 % Artefact handling 
 cfg.channel = 'all';
@@ -71,11 +77,11 @@ data_clean = ft_preprocessing(cfg);
 
 % Compute ERPs
 cfg = []; 
-cfg.trials = find(data_clean.trials == 1);
+cfg.trials = find(data_clean.trials == 65152);
 standard = ft_timelockanalysis(cfg,data_clean);
 
 cfg = []; 
-cfg.trials = find(data_clean.trials == 3);
+cfg.trials = find(data_clean.trials == 65216);
 rare = ft_timelockanalysis(cfg,data_clean);
 
 % Plot ERP
