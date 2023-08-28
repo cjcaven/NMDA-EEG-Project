@@ -3,6 +3,7 @@
 
 % Load data
 filename = './bids/sub-/eeg/sub-_task-oddballauditoryparadigm_eeg.bdf'; 
+rchannels = load(removedchannels.mat);
 %trialdef = load('trialdef.mat');
 
 % Define standard & rare trials
