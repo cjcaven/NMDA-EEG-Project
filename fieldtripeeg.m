@@ -9,8 +9,8 @@ filename = './bids/sub-/eeg/sub-_task-oddballauditoryparadigm_eeg.bdf';
 cfg = [];
 cfg.dataset = filename;
 cfg.trialdef.eventvalue = 65152;
-cfg.trialdef.prestim        = 0.04; % in sec
-cfg.trialdef.poststim       = 0.15; % in sec
+cfg.trialdef.prestim        = 0.04; 
+cfg.trialdef.poststim       = 0.15; 
 cfg.trl_standard = ft_definetrial(cfg); %standard trials
 
 cfg.trialdef.eventvalue = 65216;
