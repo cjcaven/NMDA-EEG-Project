@@ -8,11 +8,12 @@ filename = './bids/sub-/eeg/sub-_task-oddballauditoryparadigm_eeg.bdf';
 % Define standard & rare trials
 cfg = [];
 cfg.dataset = filename;
+cfg.trialdef.trialfun = 'ft_trialfun_general';
+cfg.trialdef.eventtype = 'STATUS';
 cfg.trialdef.eventvalue = 65152;
 cfg.trialdef.prestim        = 0.04; 
 cfg.trialdef.poststim       = 0.15; 
 cfg.trl_standard = ft_definetrial(cfg); %standard trials
-
 cfg.trialdef.eventvalue = 65216;
 cfg.trl_rare = ft_definetrial(cfg); %rare trials
 
