@@ -6,21 +6,15 @@ filename = './bids/sub-/eeg/sub-_task-oddballauditoryparadigm_eeg.bdf';
 %trialdef = load('trialdef.mat');
 
 % Define standard & rare trials
+% Define standard & rare trials
 cfg = [];
 cfg.dataset = filename;
 cfg.trialdef.trialfun = 'ft_trialfun_general';
 cfg.trialdef.eventtype = 'STATUS';
-cfg.trialdef.eventvalue = 65152;
-cfg.trialdef.prestim        = 0.04; 
-cfg.trialdef.poststim       = 0.15; 
-cfg.trl_standard = ft_definetrial(cfg); %standard trials
-cfg.trialdef.eventvalue = 65216;
-cfg.trl_rare = ft_definetrial(cfg); %rare trials
-
-
-% Epoching
-data_standard = ft_redefinetrial(cfg.trl_standard);
-data_rare = ft_redefinetrial(cfg.trl_rare);
+cfg.trialdef.eventvalue = [65152 65216];
+cfg.trialdef.prestim        = 0.04; % in sec
+cfg.trialdef.poststim       = 0.15; % in sec
+cfg.trl_all = ft_definetrial(cfg); 
 
 
 % Custom montage
